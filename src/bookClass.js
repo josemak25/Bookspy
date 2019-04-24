@@ -1,4 +1,4 @@
-const DATABASE = require("./db");
+const DATABASE = require("../db/db");
 
 function Book(
   noCopies,
@@ -18,3 +18,5 @@ function Book(
   this.description = bookDescription;
   DATABASE.bookLibery.push(this);
 }
+
+module.exports = Book;

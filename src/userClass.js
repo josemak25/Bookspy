@@ -1,4 +1,4 @@
-const DATABASE = require("./db");
+const DATABASE = require("../db/db");
 
 function User(name, email, password) {
   this.name = name;

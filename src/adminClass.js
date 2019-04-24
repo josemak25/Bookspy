@@ -9,3 +9,5 @@ function Admin(name, email, password) {
 
 Admin.prototype = Object.create(User.prototype);
 Admin.prototype.constructor = Admin;
+
+module.exports = Admin;
