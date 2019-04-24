@@ -29,4 +29,14 @@ User.prototype.viewBookByCategory = category => {
   return Book.prototype.viewBookByCategory(category);
 };
 
+User.prototype.updateUserDetails = function(
+  name,
+  email,
+  password,
+  user_id = this.user_id
+) {
+  const user = DATABASE.userDB.find(user => user.user_id === user_id);
+  return (user.name = name), (user.email = email), (user.password = password);
+};
+
 module.exports = User;
