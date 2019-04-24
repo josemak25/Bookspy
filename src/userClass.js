@@ -1,4 +1,5 @@
 const DATABASE = require("../db/db");
+const Book = require("./bookClass");
 
 function User(name, email, password) {
   this.name = name;
@@ -9,7 +10,7 @@ function User(name, email, password) {
   this.user_id = null;
 }
 
-User.prototype.saveUser = () => {
+User.prototype.saveUser = function() {
   function idgenerator() {
     return DATABASE.userDB.length < 1
       ? 1
@@ -17,11 +18,15 @@ User.prototype.saveUser = () => {
   }
 
   this.user_id = idgenerator();
-  DATABASE.userDB.push(this);
+  return DATABASE.userDB.push(this);
 };
 
 User.prototype.viewAllBooks = () => {
-  return DATABASE.bookLibery;
+  return Book.prototype.viewAllBooks();
+};
+
+User.prototype.viewBookByCategory = category => {
+  return Book.prototype.viewBookByCategory(category);
 };
 
 module.exports = User;

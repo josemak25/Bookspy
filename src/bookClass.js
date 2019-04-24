@@ -43,4 +43,12 @@ Book.prototype.addNewBook = (
     bookDescription
   );
 };
+
+Book.prototype.viewAllBooks = () => {
+  return DATABASE.bookLibery;
+};
+
+Book.prototype.viewBookByCategory = category => {
+  return DATABASE.bookLibery.filter(elem => elem.category === category);
+};
 module.exports = Book;
