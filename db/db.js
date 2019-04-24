@@ -1,6 +1,7 @@
 const dataDase = {
   userDB: [],
-  bookLibery: []
+  bookLibery: [],
+  suggestedBooks: []
 };
 
 module.exports = dataDase;

@@ -66,4 +66,25 @@ Book.prototype.buyBook = (bookName, noOfCopies) => {
   }
 };
 
+Book.prototype.suggestBooks = (bookName, authorName) => {
+  return DATABASE.suggestedBooks.push({ title: bookName, author: authorName });
+};
+
+Book.prototype.readABook = function(bookName, authorName, user_id) {
+  const user = DATABASE.userDB.find(user => user.user_id === user_id);
+  if (user.expiringDate !== "00:00:00") {
+    const book = DATABASE.bookLibery.find(
+      book => book.title == bookName && book.author == authorName
+    );
+    if (book) {
+      book.view += 1;
+      return console.log("Enjoy your reading");
+    } else {
+      return console.log("Sorry couldn't find your book at this time");
+    }
+  } else {
+    return console.log("Please subscribe to our plans to read a book");
+  }
+};
+
 module.exports = Book;

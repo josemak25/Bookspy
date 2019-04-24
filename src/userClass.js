@@ -43,4 +43,16 @@ User.prototype.buyBook = function(bookName, noOfCopies) {
   return Book.prototype.buyBook(bookName, noOfCopies);
 };
 
+User.prototype.suggestBooks = function(bookName, authorName) {
+  return Book.prototype.suggestBooks(bookName, authorName);
+};
+
+User.prototype.readABook = function(
+  bookName,
+  authorName,
+  user_id = this.user_id
+) {
+  Book.prototype.readABook(bookName, authorName, user_id);
+};
+
 module.exports = User;
