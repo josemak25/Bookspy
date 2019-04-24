@@ -13,7 +13,7 @@ function Book(
   this.pages = `${bookPages} pages`;
   this.category = bookCategory;
   this.image = "https://api.gooogle.book.com/314561";
-  this.status = `${noCopies} copies available`;
+  this.avaliable_copies = noCopies;
   this.view = 0;
   this.book_id = idgenerator();
   this.description = bookDescription;
@@ -51,4 +51,19 @@ Book.prototype.viewAllBooks = () => {
 Book.prototype.viewBookByCategory = category => {
   return DATABASE.bookLibery.filter(elem => elem.category === category);
 };
+
+Book.prototype.buyBook = (bookName, noOfCopies) => {
+  const book = DATABASE.bookLibery.find(book => book.title == bookName);
+  if (book.avaliable_copies > 1) {
+    if (book.avaliable_copies >= noOfCopies) {
+      book.avaliable_copies -= noOfCopies;
+      return "Succesfuly purchased";
+    } else {
+      return "Number of book at stcok is not enough";
+    }
+  } else {
+    return "Sorry this book is out of stock";
+  }
+};
+
 module.exports = Book;

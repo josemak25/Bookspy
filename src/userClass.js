@@ -39,4 +39,8 @@ User.prototype.updateUserDetails = function(
   return (user.name = name), (user.email = email), (user.password = password);
 };
 
+User.prototype.buyBook = function(bookName, noOfCopies) {
+  return Book.prototype.buyBook(bookName, noOfCopies);
+};
+
 module.exports = User;
