@@ -9,7 +9,7 @@ function User(name, email, password) {
   this.user_id = null;
 }
 
-User.prototype.saveUser = function() {
+User.prototype.saveUser = () => {
   function idgenerator() {
     return DATABASE.userDB.length < 1
       ? 1
@@ -18,6 +18,10 @@ User.prototype.saveUser = function() {
 
   this.user_id = idgenerator();
   DATABASE.userDB.push(this);
+};
+
+User.prototype.viewAllBooks = () => {
+  return DATABASE.bookLibery;
 };
 
 module.exports = User;
