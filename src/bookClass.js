@@ -87,4 +87,20 @@ Book.prototype.readABook = function(bookName, authorName, user_id) {
   }
 };
 
+Book.prototype.subscribeForReading = function(subPlan, user_id) {
+  const user = DATABASE.userDB.find(user => user.user_id === user_id);
+  if (subPlan.toLowerCase() == "pro") {
+    user.subscribed = `${subPlan.charAt(0).toUpperCase() +
+      subPlan.slice(1)} Plan`;
+    user.expiringDate = "1 Month";
+  } else if (subPlan.toLowerCase() == "premium") {
+    user.subscribed = `${subPlan.charAt(0).toUpperCase() +
+      subPlan.slice(1)} Plan`;
+    user.expiringDate = "1 Year";
+  } else {
+    return console.log("Invalid Subscription");
+  }
+  return console.log("Subscription successful");
+};
+
 module.exports = Book;

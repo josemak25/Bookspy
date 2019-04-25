@@ -55,4 +55,8 @@ User.prototype.readABook = function(
   Book.prototype.readABook(bookName, authorName, user_id);
 };
 
+User.prototype.subscribeForReading = function(subPlan, user_id = this.user_id) {
+  Book.prototype.subscribeForReading(subPlan, user_id);
+};
+
 module.exports = User;

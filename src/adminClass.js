@@ -4,7 +4,7 @@ const Book = require("./bookClass");
 function Admin(name, email, password) {
   User.call(this, name, email, password);
   this.isAdmin = true;
-  this.subscribed = "Pro Plan";
+  this.subscribed = "Premium Plan";
   this.expiringDate = "unlimited";
 }
 
