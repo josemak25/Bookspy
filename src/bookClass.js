@@ -45,7 +45,7 @@ Book.prototype.addNewBook = (
 };
 
 Book.prototype.viewAllBooks = () => {
-  return DATABASE.bookLibery;
+  return DATABASE.bookLibery.map(books => books);
 };
 
 Book.prototype.viewBookByCategory = category => {

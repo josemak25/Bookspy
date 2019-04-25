@@ -38,4 +38,8 @@ Admin.prototype.deleteABook = book_id => {
   return Book.prototype.deleteABook(book_id);
 };
 
+Admin.prototype.viewAllUsers = () => {
+  return DATABASE.userDB.map(users => users);
+};
+
 module.exports = Admin;
