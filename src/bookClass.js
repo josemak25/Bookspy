@@ -117,4 +117,9 @@ Book.prototype.deleteABook = book_id => {
   } else return "Book not found";
 };
 
+Book.prototype.deleteAllBooks = () => {
+  DATABASE.bookLibery = [];
+  return "Books where all deleted successfully";
+};
+
 module.exports = Book;
