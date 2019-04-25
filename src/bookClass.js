@@ -78,12 +78,12 @@ Book.prototype.readABook = function(bookName, authorName, user_id) {
     );
     if (book) {
       book.view += 1;
-      return console.log("Enjoy your reading");
+      return "Enjoy your reading";
     } else {
-      return console.log("Sorry couldn't find your book at this time");
+      return "Sorry couldn't find your book at this time";
     }
   } else {
-    return console.log("Please subscribe to our plans to read a book");
+    return "Please subscribe to our plans to read a book";
   }
 };
 
@@ -98,9 +98,9 @@ Book.prototype.subscribeForReading = function(subPlan, user_id) {
       subPlan.slice(1)} Plan`;
     user.expiringDate = "1 Year";
   } else {
-    return console.log("Invalid Subscription");
+    return "Invalid Subscription";
   }
-  return console.log("Subscription successful");
+  return "Subscription successful";
 };
 
 Book.prototype.deleteABook = book_id => {

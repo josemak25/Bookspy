@@ -7,7 +7,6 @@ function User(name, email, password) {
   this.password = password;
   this.subscribed = "Basic Plan";
   this.expiringDate = "00:00:00";
-  this.user_id = null;
 }
 
 User.prototype.saveUser = function() {
