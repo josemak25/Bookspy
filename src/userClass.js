@@ -36,7 +36,8 @@ User.prototype.updateUserDetails = function(
   user_id = this.user_id
 ) {
   const user = DATABASE.userDB.find(user => user.user_id === user_id);
-  return (user.name = name), (user.email = email), (user.password = password);
+  (user.name = name), (user.email = email), (user.password = password);
+  return "Details Updated Successfully";
 };
 
 User.prototype.buyBook = function(bookName, noOfCopies) {

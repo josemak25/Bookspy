@@ -1,5 +1,6 @@
 const User = require("./userClass");
 const Book = require("./bookClass");
+const DATABASE = require("../db/db");
 
 function Admin(name, email, password) {
   User.call(this, name, email, password);
@@ -27,6 +28,14 @@ Admin.prototype.addNewBook = (
     bookPages,
     bookDescription
   );
+};
+
+Admin.prototype.checkSuggestions = () => {
+  return DATABASE.suggestedBooks;
+};
+
+Admin.prototype.deleteABook = book_id => {
+  return Book.prototype.deleteABook(book_id);
 };
 
 module.exports = Admin;

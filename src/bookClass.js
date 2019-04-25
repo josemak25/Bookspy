@@ -59,7 +59,7 @@ Book.prototype.buyBook = (bookName, noOfCopies) => {
       book.avaliable_copies -= noOfCopies;
       return "Succesfuly purchased";
     } else {
-      return "Number of book at stcok is not enough";
+      return "Number of book at stock is not enough";
     }
   } else {
     return "Sorry this book is out of stock";
@@ -72,7 +72,7 @@ Book.prototype.suggestBooks = (bookName, authorName) => {
 
 Book.prototype.readABook = function(bookName, authorName, user_id) {
   const user = DATABASE.userDB.find(user => user.user_id === user_id);
-  if (user.expiringDate !== "00:00:00") {
+  if (user.subscribed !== "Basic Plan") {
     const book = DATABASE.bookLibery.find(
       book => book.title == bookName && book.author == authorName
     );
@@ -101,6 +101,20 @@ Book.prototype.subscribeForReading = function(subPlan, user_id) {
     return console.log("Invalid Subscription");
   }
   return console.log("Subscription successful");
+};
+
+Book.prototype.deleteABook = book_id => {
+  let byByIndex = 0;
+  const book = DATABASE.bookLibery.find((book, index) => {
+    if (book.book_id == book_id) {
+      byByIndex = index;
+      return book;
+    }
+  });
+  if (book) {
+    DATABASE.bookLibery.splice(byByIndex, 1);
+    return "Book Deleted successfully";
+  } else return "Book not found";
 };
 
 module.exports = Book;
