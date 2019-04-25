@@ -42,4 +42,7 @@ Admin.prototype.viewAllUsers = () => {
   return DATABASE.userDB.map(users => users);
 };
 
+Admin.prototype.viewAUser = user_id => {
+  return DATABASE.userDB.find(user => user.user_id === user_id);
+};
 module.exports = Admin;
