@@ -4,7 +4,7 @@
   "description": "A book library design using Javascript OOP (Javascript Prototypal Inheritance)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/josemak25/Bookspy/issues"
   },
-  "homepage": "https://github.com/josemak25/Bookspy#readme"
+  "homepage": "https://github.com/josemak25/Bookspy#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
 }

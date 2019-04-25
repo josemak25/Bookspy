@@ -17,7 +17,8 @@ User.prototype.saveUser = function() {
   }
 
   this.user_id = idgenerator();
-  return DATABASE.userDB.push(this);
+  DATABASE.userDB.push(this);
+  return "Thank for registring with BookSpy";
 };
 
 User.prototype.viewAllBooks = () => {
