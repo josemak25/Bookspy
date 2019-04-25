@@ -92,7 +92,7 @@ Book.prototype.subscribeForReading = function(subPlan, user_id) {
   if (subPlan.toLowerCase() == "pro") {
     user.subscribed = `${subPlan.charAt(0).toUpperCase() +
       subPlan.slice(1)} Plan`;
-    user.expiringDate = "1 Month";
+    user.expiringDate = "3 Months";
   } else if (subPlan.toLowerCase() == "premium") {
     user.subscribed = `${subPlan.charAt(0).toUpperCase() +
       subPlan.slice(1)} Plan`;
