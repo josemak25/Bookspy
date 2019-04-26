@@ -20,7 +20,7 @@ Admin.prototype.addNewBook = (
   bookPages,
   bookDescription
 ) => {
-  Book.prototype.addNewBook(
+  return Book.prototype.addNewBook(
     noCopies,
     authorName,
     bookTitle,

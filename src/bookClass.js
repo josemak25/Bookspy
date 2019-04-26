@@ -34,7 +34,7 @@ Book.prototype.addNewBook = (
   bookPages,
   bookDescription
 ) => {
-  return new Book(
+  new Book(
     noCopies,
     authorName,
     bookTitle,
@@ -42,6 +42,7 @@ Book.prototype.addNewBook = (
     bookPages,
     bookDescription
   );
+  return "Book was added successfully";
 };
 
 Book.prototype.viewAllBooks = () => {
