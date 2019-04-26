@@ -1,0 +1,23 @@
+{
+  "name": "bookspy",
+  "version": "1.0.0",
+  "description": "A book library design using Javascript OOP (Javascript Prototypal Inheritance)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josemak25/Bookspy.git"
+  },
+  "author": "Amakiri Joseph Lucky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josemak25/Bookspy/issues"
+  },
+  "homepage": "https://github.com/josemak25/Bookspy#readme",
+  "dependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.7.1"
+  }
+}
