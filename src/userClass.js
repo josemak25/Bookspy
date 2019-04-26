@@ -53,7 +53,7 @@ User.prototype.readABook = function(
   authorName,
   user_id = this.user_id
 ) {
-  Book.prototype.readABook(bookName, authorName, user_id);
+  return Book.prototype.readABook(bookName, authorName, user_id);
 };
 
 User.prototype.subscribeForReading = function(subPlan, user_id = this.user_id) {

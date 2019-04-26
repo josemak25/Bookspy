@@ -68,7 +68,8 @@ Book.prototype.buyBook = (bookName, noOfCopies) => {
 };
 
 Book.prototype.suggestBooks = (bookName, authorName) => {
-  return DATABASE.suggestedBooks.push({ title: bookName, author: authorName });
+  DATABASE.suggestedBooks.push({ title: bookName, author: authorName });
+  return "Thanks, your suggestions are been looked at";
 };
 
 Book.prototype.readABook = function(bookName, authorName, user_id) {
@@ -98,8 +99,6 @@ Book.prototype.subscribeForReading = function(subPlan, user_id) {
     user.subscribed = `${subPlan.charAt(0).toUpperCase() +
       subPlan.slice(1)} Plan`;
     user.expiringDate = "1 Year";
-  } else {
-    return "Invalid Subscription";
   }
   return "Subscription successful";
 };
