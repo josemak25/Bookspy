@@ -17,7 +17,8 @@ User.prototype.saveUser = function() {
   }
 
   this.user_id = idgenerator();
-  return DATABASE.userDB.push(this);
+  DATABASE.userDB.push(this);
+  return "Thank for registring with BookSpy";
 };
 
 User.prototype.viewAllBooks = () => {
@@ -52,11 +53,11 @@ User.prototype.readABook = function(
   authorName,
   user_id = this.user_id
 ) {
-  Book.prototype.readABook(bookName, authorName, user_id);
+  return Book.prototype.readABook(bookName, authorName, user_id);
 };
 
 User.prototype.subscribeForReading = function(subPlan, user_id = this.user_id) {
-  Book.prototype.subscribeForReading(subPlan, user_id);
+  return Book.prototype.subscribeForReading(subPlan, user_id);
 };
 
 module.exports = User;
